@@ -8,5 +8,8 @@ print(master)
 print(s_name)
 
 while True:
+    print("Fake APRS Read: ")
     print(os.read(master, 1))
+
+    os.write(master, b'w')
     sleep(0.1)
