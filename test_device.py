@@ -1,8 +1,10 @@
 from serial import Serial
+from devices.aprs_device import APRS
 
-s = Serial(port='/dev/ttys000')
+device = APRS()
+
+s = Serial(port=device.port_name)
 
 while True:
     s.write(b'r')
-    print("APRS Wrote")
-    print(s.read())
+    print(f"APRS Wrote {s.read()}")
